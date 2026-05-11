@@ -1,16 +1,12 @@
 import { SIZES } from "@/lib/constants";
-import {
-  Box,
-  CheckCircle,
-  ChevronDown,
-  ChevronUp,
-  Inbox,
-  Users,
-} from "lucide-react";
+import { Box, CheckCircle, ChevronDown, ChevronUp, Inbox, Users } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Avatar, Text } from "../ui";
 
 const Sidebar = () => {
+  const router = useRouter();
   const [sideNavState, setSideNavState] = useState({
     workspaceExpanded: false,
     teamsExpanded: false,
@@ -19,22 +15,12 @@ const Sidebar = () => {
     {
       name: "Inbox",
       href: "/",
-      icon: (
-        <Inbox
-          className="text-gray-400 hover:text-white"
-          size={SIZES.ICON_SIZES.lg}
-        />
-      ),
+      icon: <Inbox className="text-gray-400 hover:text-white" size={SIZES.ICON_SIZES.lg} />,
     },
     {
       name: "Issues",
       href: "/issues",
-      icon: (
-        <CheckCircle
-          className="text-gray-400 hover:text-white"
-          size={SIZES.ICON_SIZES.lg}
-        />
-      ),
+      icon: <CheckCircle className="text-gray-400 hover:text-white" size={SIZES.ICON_SIZES.lg} />,
     },
   ];
 
@@ -42,32 +28,17 @@ const Sidebar = () => {
     {
       name: "Projects",
       href: "/projects",
-      icon: (
-        <Box
-          className="text-gray-400 hover:text-white"
-          size={SIZES.ICON_SIZES.lg}
-        />
-      ),
+      icon: <Box className="text-gray-400 hover:text-white" size={SIZES.ICON_SIZES.lg} />,
     },
     {
       name: "Members",
       href: "/members",
-      icon: (
-        <Users
-          className="text-gray-400 hover:text-white"
-          size={SIZES.ICON_SIZES.lg}
-        />
-      ),
+      icon: <Users className="text-gray-400 hover:text-white" size={SIZES.ICON_SIZES.lg} />,
     },
     {
       name: "Teams",
       href: "/teams",
-      icon: (
-        <Users
-          className="text-gray-400 hover:text-white"
-          size={SIZES.ICON_SIZES.lg}
-        />
-      ),
+      icon: <Users className="text-gray-400 hover:text-white" size={SIZES.ICON_SIZES.lg} />,
     },
   ];
   return (
@@ -87,14 +58,14 @@ const Sidebar = () => {
       </div>
       <nav className="flex flex-col gap-2 px-4">
         {accessNavItems.map((item) => (
-          <a
+          <Link
             key={item.name}
             href={item.href}
             className="flex items-center gap-2 text-gray-400 hover:text-white"
           >
             {item.icon}
             <span>{item.name}</span>
-          </a>
+          </Link>
         ))}
 
         <Text
@@ -117,14 +88,14 @@ const Sidebar = () => {
         <div className="flex flex-col gap-2 pl-1">
           {sideNavState.workspaceExpanded &&
             workspaceNavItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="flex items-center gap-2 text-gray-400 hover:text-white"
               >
                 {item.icon}
                 <span>{item.name}</span>
-              </a>
+              </Link>
             ))}
         </div>
       </nav>

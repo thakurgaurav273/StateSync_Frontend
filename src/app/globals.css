@@ -11,7 +11,7 @@
   --color-primary: #6F5BFF;
   --color-primary-hover: #5E4BFF;
   --color-primary-soft: rgba(111, 91, 255, 0.12);
-  
+
   --color-accent: #F59E0B;
   --color-accent-soft: rgba(245, 158, 11, 0.12);
   --color-danger: #EF4444;
@@ -22,8 +22,8 @@
   --text-primary: #E4E8F1;
   --text-secondary: #9AA3B2;
   --text-tertiary: #6B7280;
-  --text-muted: #4B5563;
-  
+  --text-muted: #222324;
+
   --border-primary: #1C1F2A;
   --border-secondary: #161922;
   --border-focus: #6F5BFF;
@@ -38,7 +38,7 @@
 
   --gradient-primary: linear-gradient(135deg, #6F5BFF, #4F7CFF);
   --gradient-glow: radial-gradient(circle at top, rgba(111,91,255,0.12), transparent 60%);
-  
+
   --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.25);
   --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.35);
   --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.45);
